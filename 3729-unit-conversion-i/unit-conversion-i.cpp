@@ -5,10 +5,8 @@ public:
         int n = (int)conversions.size() + 1;
         vector < long long > ans(n);
         vector < pair < int, int > > adj[100005];
-        for (auto &e : conversions) {
-            int u = e[0], v = e[1], w = e[2];
-            adj[u].emplace_back(v, w);
-        }
+        for (auto &e : conversions)
+        adj[e[0]].push_back({e[1],e[2]});
         ans.resize(n,0);
         ans[0] = 1;
         queue < int > q;
